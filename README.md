@@ -354,9 +354,7 @@ Thanks for all the fish
 
 Lorsque cette valeur est saisie dans l’application, un message de succès apparaît.
 
-Capture d’écran attendue :
-
-- validation réussie
+![APK Size](images/15.png)
 
 ---
 
