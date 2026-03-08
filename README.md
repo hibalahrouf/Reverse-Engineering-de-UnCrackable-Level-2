@@ -56,17 +56,13 @@ adb devices
 adb install UnCrackable-Level2.apk
 ```
 
-Captures d’écran attendues :
-
-- Émulateur détecté par ADB
-- APK installé avec succès
-- Interface de l’application
+![APK Size](images/2.png)
 
 L’application affiche une interface simple contenant :
 
 - un champ de saisie
 - un bouton VERIFY
-
+![APK Size](images/1.png)
 À ce stade, l’objectif est simplement de comprendre le comportement visible de l’application avant d’analyser le code.
 
 ---
@@ -88,11 +84,8 @@ Chaque tentative produit le message d’erreur suivant :
 Nope...
 That's not it. Try again.
 ```
-
-Captures d’écran attendues :
-
-- entrée invalide
-- message d’erreur affiché
+![APK Size](images/12.png)
+![APK Size](images/13.png)
 
 Cela confirme que l’application compare l’entrée utilisateur avec une valeur cachée.
 
@@ -108,10 +101,7 @@ L’APK a été ouvert avec JADX, un décompilateur permettant de convertir le b
 jadx-gui UnCrackable-Level2.apk
 ```
 
-Captures d’écran attendues :
-
-- APK ouvert dans JADX
-- structure des packages
+![APK Size](images/3.png)
 
 Le package principal identifié est :
 
@@ -129,6 +119,7 @@ Les classes principales sont :
 # Étape 4 — Identification du point d’entrée de la vérification
 
 Dans la classe MainActivity, la méthode responsable de la vérification est :
+![APK Size](images/4.png)
 
 ```
 verify(View view)
@@ -161,6 +152,7 @@ CodeCheck.a()
 # Étape 5 — Analyse de la classe CodeCheck
 
 La classe CodeCheck contient l’implémentation suivante :
+![APK Size](images/5.png)
 
 ```java
 public class CodeCheck {
@@ -211,16 +203,13 @@ Dans l’APK, les bibliothèques natives se trouvent dans :
 lib/<architecture>/
 ```
 
-Exemple :
 
-```
-lib/x86/libfoo.so
-```
 
 Captures d’écran attendues :
 
-- structure de l’APK extraite
-- bibliothèque native localisée
+![APK Size](images/6.png)
+![APK Size](images/7.png)
+![APK Size](images/8.png)
 
 ---
 
@@ -236,8 +225,7 @@ Java_sg_vantagepoint_uncrackable2_CodeCheck_bar
 
 Captures d’écran attendues :
 
-- projet Ghidra
-- fonction JNI identifiée
+![APK Size](images/9.png)
 
 ---
 
@@ -319,6 +307,7 @@ Résultat :
 ```
 hsif eht lla rof sknahT
 ```
+![APK Size](images/10.png)
 
 La chaîne obtenue est inversée. Il faut donc la renverser.
 
