@@ -62,7 +62,10 @@ L’application affiche une interface simple contenant :
 
 - un champ de saisie
 - un bouton VERIFY
+
+  
 ![APK Size](images/1.png)
+
 À ce stade, l’objectif est simplement de comprendre le comportement visible de l’application avant d’analyser le code.
 
 ---
@@ -354,7 +357,7 @@ Thanks for all the fish
 
 Lorsque cette valeur est saisie dans l’application, un message de succès apparaît.
 
-![APK Size](images/15.png)
+![APK Size](images/15.jpeg)
 
 ---
 
